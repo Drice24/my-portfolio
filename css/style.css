@@ -267,65 +267,71 @@ span {
   width: 80%;
 } */
 
-/* Style the carousel and images --start*/
-.carousel-images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center images horizontally */
-  text-align: center; /* Center images and names vertically */
-}
-.carousel-images img {
-  width: calc(50% - 5px);
-  height: auto;
-  cursor: pointer;
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
-.carousel-images img:nth-child(2n) {
-  margin-right: 0;
-}
-.carousel-images .image-container {
+/* ----------------------Style the carousel and images --start */
+/* .carousel {
   position: relative;
-  width: 50%; /* Set width to 50% for full desktop screen */
-  margin-right: 20px; /* Add spacing between images */
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  background-color: #fff;
+  margin: 0 auto; /* This will center the carousel horizontally
+} */
+.carousel {
+  position: relative;
+  width: 80%;
+  max-width: 600px;  
+  overflow: hidden;
+  border: 2px solid #ccc;
+  background-color: #fff;
+  margin: 0 auto; /* This will center the carousel horizontally*/
 }
-.carousel-images .image-container span {
-  display: block; /* Display names as block elements */
-  margin-top: 5px; /* Add margin on top of names for spacing */
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
-.carousel-images .image-container {
-  position: relative; /* Add position relative for absolute positioning */
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
 }
-.carousel-images .image-container img {
-  width: 100%; /* Ensure image takes full width of container */
-  height: auto;
+.carousel-item img {
+  width: 100%;
+  display: block; 
+  object-fit: contain; /* Ensure the image covers the area */
+}
+.carousel-title {
+  padding: 10px 0;
+  font-size: 1.2em;
+  background: var(--bg-color);
+  flex-grow: 1;
+}
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 10px;
   cursor: pointer;
+  opacity: 50%;
+  width: 50px;
+  height: 50px;  
+  border-radius: 50%; /* Use 50% for a perfect circle */
+  z-index: 1000; 
+  font-size: 24px; /* Adjust the font size as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-@media (max-width: 768px) {
-  .carousel-images .image-container {
-    width: calc(100% - 5px); /* Set full width for mobile */
-  }
+.carousel-button.prev {
+  left: 10px;
 }
-
-/* To display the project name and reduce the opacity of the image when hovering over it  */
-.carousel-images .image-container span {
-  display: none; /* Hide the project name by default */
-  position: absolute; /* Position the project name */
-  top: 50%; /* Position the project name at the vertical center */
-  left: 50%; /* Position the project name at the horizontal center */
-  transform: translate(-50%, -50%); /* Center the project name */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  color: white; /* Text color */
-  padding: 5px; /* Padding for the project name */
-  font-size: 30px; /* Set the font size to 18 pixels */
+.carousel-button.next {
+  right: 10px;
 }
-.carousel-images .image-container:hover img {
-  opacity: 0.7; /* Reduce opacity of the image on hover */
-}
-.carousel-images .image-container:hover span {
-  display: block; /* Display the project name on hover */
-}
-/* Style the carousel and images --end */
+/* ----------------------Style the carousel and images --end */
 
 .services-content {
   display: grid;
