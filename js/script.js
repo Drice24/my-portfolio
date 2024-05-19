@@ -15,9 +15,32 @@
         navbar.classList.remove('active');
     }
      
-    // Dark Mode
+// Carousel functionality
+    const carouselContainer = document.querySelector('.carousel-container');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    
+    let currentIndex = 0;
+    
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        carouselContainer.style.transform = `translateX(${offset}%)`;
+    }
+    
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : carouselItems.length - 1;
+        updateCarousel();
+    });
+    
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex < carouselItems.length - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
+
+// Dark Mode
     let darkmode = document.querySelector('#darkmode');
-     
+        
     darkmode.onclick = () => {
         if(darkmode.classList.contains('bx-moon')){
             darkmode.classList.replace('bx-moon','bx-sun');
@@ -26,7 +49,7 @@
             darkmode.classList.replace('bx-sun','bx-moon');
             document.body.classList.remove('active');
         }
-    }
+    }    
 
     // Carousel function to handle the redirection when an image is clicked
     // function goToWebsite(url) {
