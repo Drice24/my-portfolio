@@ -30,7 +30,7 @@ body.active {
 }
 body {
   background: var(--bg-color);
-  color: var(--text-color);#06070E
+  color: var(--text-color); /* #06070E */
 }
 *::selection {
   color: var(--bg-color);
@@ -107,6 +107,9 @@ header.shadow {
 }
 .home-img img {
   width: 100%;
+  border-radius: 50%; /* Makes the image circular */
+  /*border: 3px solid hsl(234, 100%, 16%); /* Optional: border around the image */  
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Shadow effect */
 }
 .home-text span {
   font-size: var(--medium-font);
@@ -147,17 +150,16 @@ header.shadow {
   background: var(--hover);
 }
  
-
 .about-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 2rem;
 }
- 
 .about-img img {
   width: 80%;
   border-radius: 0.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Shadow effect */
 }
 .about-text p {
   font-size: var(--p-font);
@@ -196,8 +198,9 @@ header.shadow {
 .skills-img img {
   /* width: 0%; */
   width: 110%;
-  padding-left: 4rem;
+  padding-left: 0rem;
   object-position: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Shadow effect */
 }
 .bars-box {
   position: relative;
