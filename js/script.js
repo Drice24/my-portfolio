@@ -51,6 +51,13 @@
         }
     }    
 
+// Backgroud Music
+    document.addEventListener("DOMContentLoaded", function() {
+        var audio = document.getElementById("background-music");
+        audio.volume = 0.3;
+    });
+
+
     // Carousel function to handle the redirection when an image is clicked
     // function goToWebsite(url) {
     //     window.location.href = url;
